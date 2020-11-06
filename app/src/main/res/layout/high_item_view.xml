@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="80dp">
+
+    <com.hx.weatherforecast.ui.MyLineChart
+        android:id="@+id/line_chart"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:line_color="#63BBE3"
+        app:line_stroke_width="2dp"
+        app:point_radius="3dp"
+        app:text_color="#D38E3A"
+        app:text_size="14sp"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

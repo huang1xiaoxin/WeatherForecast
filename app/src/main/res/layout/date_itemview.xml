@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+
+    <TextView
+        android:id="@+id/today_text_view"
+        style="@style/text_view_style"
+        android:text="\n\n10-20" />
+
+
+    <TextView
+        android:id="@+id/tomorrow_text_view"
+        style="@style/text_view_style"
+        android:text="昨天\n\n10-20" />
+
+
+    <TextView
+        android:id="@+id/one_text_view"
+        style="@style/text_view_style"
+        android:text="周五\n\n10-20" />
+
+
+    <TextView
+        android:id="@+id/two_text_view"
+        style="@style/text_view_style"
+        android:text="周五\n\n10-20" />
+
+
+    <TextView
+        android:id="@+id/three_text_view"
+        style="@style/text_view_style"
+        android:text="周五\n\n10-20" />
+
+
+    <TextView
+        android:id="@+id/four_text_view"
+        style="@style/text_view_style"
+        android:text="周五\n\n10-20" />
+
+
+    <TextView
+        android:id="@+id/five_text_view"
+        style="@style/text_view_style"
+        android:text="周五\n\n10-20" />
+
+
+</LinearLayout>

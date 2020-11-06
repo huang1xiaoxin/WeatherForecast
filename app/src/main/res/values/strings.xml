@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">WeatherForecast</string>
+    <string name="search">输入城市</string>
+</resources>
