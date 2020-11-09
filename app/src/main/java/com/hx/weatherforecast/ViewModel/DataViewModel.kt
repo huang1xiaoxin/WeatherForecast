@@ -13,16 +13,15 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class DataViewModel:ViewModel() {
-    private var mLiveData: MutableLiveData<List<WeatherBean>> = MutableLiveData()
+    private var mLiveData: MutableLiveData<WeatherBean> = MutableLiveData()
     var cityData:MutableLiveData<String> =MutableLiveData()
     var model:Model = Model()
-    fun getWeatherData(): MutableLiveData<List<WeatherBean>> {
+    fun getWeatherData(): MutableLiveData<WeatherBean> {
         return mLiveData
     }
     fun getWeatherContent(id: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            val beans: MutableList<WeatherBean> = ArrayList()
-            beans.add(model.getWeatherInfo(id))
+            val beans=model.getWeatherInfo(id)
             withContext(Dispatchers.Main){
                 //需要在主线程重赋值
                 mLiveData.value=beans

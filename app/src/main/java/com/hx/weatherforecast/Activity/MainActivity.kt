@@ -8,7 +8,6 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -31,6 +30,7 @@ class MainActivity:AppCompatActivity(){
     private lateinit var mCityMap: MutableMap<String, String>
     private lateinit var mLoadingDialog: LinearLayout
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBind = ActivityMainBinding.inflate(layoutInflater)
@@ -51,8 +51,8 @@ class MainActivity:AppCompatActivity(){
     }
 
     fun registerLiveDataObserve() {
-        mViewModel?.getWeatherData()?.observe(this, Observer<List<WeatherBean>> {
-            val weatherBean = it[0]
+        mViewModel?.getWeatherData()?.observe(this, Observer<WeatherBean> {
+            val weatherBean = it
             mItems.clear()
             mItems.add(TodayWeather(weatherBean))
             mItems.add(FutureWeather(weatherBean))
@@ -70,9 +70,6 @@ class MainActivity:AppCompatActivity(){
 
     }
 
-    fun initViewModel(): DataViewModel {
-        return ViewModelProvider(this).get(DataViewModel::class.java)
-    }
 
     private fun onClick() {
         mBind.searchButton.setOnClickListener {
